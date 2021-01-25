@@ -1,0 +1,14 @@
+### 访问受保护的资源
+GET http://localhost:60001/hello
+
+### Basic authorization with variables.
+GET http://localhost:60001/auth/login
+Content-Type: application/json
+
+{
+  "name": "zs",
+  "password": "zs"
+}
+
+
+
