@@ -7,11 +7,10 @@
         <artifactId>thinking-more-parent</artifactId>
         <groupId>ProSayJ</groupId>
         <version>1.0-SNAPSHOT</version>
-        <!--<relativePath>../pom.xml</relativePath>-->
+        <relativePath>../thinking-more-parent/pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>ProSayJ</groupId>
     <artifactId>think-in-spring-security</artifactId>
     <version>1.0-SNAPSHOT</version>
 
