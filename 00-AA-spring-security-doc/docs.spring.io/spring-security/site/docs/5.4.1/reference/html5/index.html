@@ -4226,10 +4226,14 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                     <h3 id="servlet-security-filters"><a class="anchor" href="#servlet-security-filters"></a>9.5. Security Filters</h3>
                     <div class="paragraph">
                         <p>The Security Filters are inserted into the <a href="#servlet-filterchainproxy">FilterChainProxy</a> with the <a href="#servlet-securityfilterchain">SecurityFilterChain</a> API. The <a href="#servlet-filters-review">order of <code>Filter</code></a>s
-                            matters. It is typically not necessary to know the ordering of Spring Security&#8217;s <code>Filter</code>s. However, there are times that it is beneficial to know the ordering</p>
+                            matters. It is typically not necessary to know the ordering of Spring Security&#8217;s <code>Filter</code>s. However, there are times that it is beneficial to know the ordering</br>
+                            安全过滤器通过 SecurityFilterChain API插入到FilterChainProxy中。过滤器的顺序很重要。通常不需要知道Spring Security过滤器的顺序。然而，有时知道顺序是有益的
+                        </p>
                     </div>
                     <div class="paragraph">
-                        <p>Below is a comprehensive list of Spring Security Filter ordering:</p>
+                        <p>Below is a comprehensive list of Spring Security Filter ordering:</br>
+                            下面是Spring Security Filter排序的综合列表:
+                        </p>
                     </div>
                     <div class="ulist">
                         <ul>
@@ -4335,10 +4339,17 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                 <div class="sect2">
                     <h3 id="servlet-exceptiontranslationfilter"><a class="anchor" href="#servlet-exceptiontranslationfilter"></a>9.6. Handling Security Exceptions</h3>
                     <div class="paragraph">
-                        <p>The <a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/access/ExceptionTranslationFilter.html"><code>ExceptionTranslationFilter</code></a> allows translation of <a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/access/AccessDeniedException.html"><code>AccessDeniedException</code></a>                            and <a href="https://docs.spring.io/spring-security/site/docs/current/api//org/springframework/security/core/AuthenticationException.html"><code>AuthenticationException</code></a> into HTTP responses.</p>
+                        <p>The
+                        <a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/access/ExceptionTranslationFilter.html">
+                        <code>ExceptionTranslationFilter</code></a> allows translation of
+                        <a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/access/AccessDeniedException.html"><code>AccessDeniedException</code></a>                            and <a href="https://docs.spring.io/spring-security/site/docs/current/api//org/springframework/security/core/AuthenticationException.html"><code>AuthenticationException</code></a> into HTTP responses.</br>
+                            ExceptionTranslationFilter允许将AccessDeniedException和AuthenticationException转换为HTTP响应。
+                        </p>
                     </div>
                     <div class="paragraph">
-                        <p><code>ExceptionTranslationFilter</code> is inserted into the <a href="#servlet-filterchainproxy">FilterChainProxy</a> as one of the <a href="#servlet-security-filters">Security Filters</a>.</p>
+                        <p><code>ExceptionTranslationFilter</code> is inserted into the <a href="#servlet-filterchainproxy">FilterChainProxy</a> as one of the <a href="#servlet-security-filters">Security Filters</a>.</br>
+                            ExceptionTranslationFilter作为一个安全过滤器被插入到FilterChainProxy中。
+                        </p>
                     </div>
                     <div class="imageblock">
                         <div class="content">
@@ -4348,28 +4359,40 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                     <div class="ulist">
                         <ul>
                             <li>
-                                <p><span class="image"><img src="images/icons/number_1.png" alt="number 1"></span> First, the <code>ExceptionTranslationFilter</code> invokes <code>FilterChain.doFilter(request, response)</code> to invoke the rest of the application.</p>
+                                <p><span class="image"><img src="images/icons/number_1.png" alt="number 1"></span> First, the <code>ExceptionTranslationFilter</code> invokes <code>FilterChain.doFilter(request, response)</code> to invoke the rest of the application.</br>
+                                    首先，ExceptionTranslationFilter调用FilterChain。doFilter(请求、响应)来调用应用程序的其余部分。
+                                </p>
                             </li>
                             <li>
-                                <p><span class="image"><img src="images/icons/number_2.png" alt="number 2"></span> If the user is not authenticated or it is an <code>AuthenticationException</code>, then <em>Start Authentication</em>.</p>
+                                <p><span class="image"><img src="images/icons/number_2.png" alt="number 2"></span> If the user is not authenticated or it is an <code>AuthenticationException</code>, then <em>Start Authentication</em>.</br>
+                                    如果用户未经过身份验证或是AuthenticationException，则启动身份验证。
+                                </p>
                                 <div class="ulist">
                                     <ul>
                                         <li>
-                                            <p>The <a href="#servlet-authentication-securitycontextholder">SecurityContextHolder</a> is cleared out</p>
+                                            <p>The <a href="#servlet-authentication-securitycontextholder">SecurityContextHolder</a> is cleared out</br>
+                                                清除SecurityContextHolder
+                                            </p>
                                         </li>
                                         <li>
                                             <p>The <code>HttpServletRequest</code> is saved in the <a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/savedrequest/RequestCache.html"><code>RequestCache</code></a>.
-                                                When the user successfully authenticates, the <code>RequestCache</code> is used to replay the original request.</p>
+                                                When the user successfully authenticates, the <code>RequestCache</code> is used to replay the original request.</br>
+                                                HttpServletRequest保存在RequestCache中。当用户成功通过身份验证时，将使用RequestCache重放原始请求。
+                                            </p>
                                         </li>
                                         <li>
-                                            <p>The <code>AuthenticationEntryPoint</code> is used to request credentials from the client. For example, it might redirect to a log in page or send a <code>WWW-Authenticate</code> header.</p>
+                                            <p>The <code>AuthenticationEntryPoint</code> is used to request credentials from the client. For example, it might redirect to a log in page or send a <code>WWW-Authenticate</code> header.</br>
+                                                AuthenticationEntryPoint用于从客户端请求凭据。例如，它可能重定向到一个登录页面或发送一个WWW-Authenticate头。
+                                            </p>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li>
                                 <p><span class="image"><img src="images/icons/number_3.png" alt="number 3"></span> Otherwise if it is an <code>AccessDeniedException</code>, then <em>Access Denied</em>. The <code>AccessDeniedHandler</code> is invoked to handle
-                                    access denied.</p>
+                                    access denied.</br>
+                                    否则，如果是AccessDeniedException，则拒绝访问。调用AccessDeniedHandler来处理拒绝访问。
+                                </p>
                             </li>
                         </ul>
                     </div>
@@ -4381,14 +4404,18 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                                 </td>
                                 <td class="content">
                                     <div class="paragraph">
-                                        <p>If the application does not throw an <code>AccessDeniedException</code> or an <code>AuthenticationException</code>, then <code>ExceptionTranslationFilter</code> does not do anything.</p>
+                                        <p>If the application does not throw an <code>AccessDeniedException</code> or an <code>AuthenticationException</code>, then <code>ExceptionTranslationFilter</code> does not do anything.</br>
+                                            如果应用程序没有抛出AccessDeniedException或AuthenticationException，那么ExceptionTranslationFilter不会做任何事情。
+                                        </p>
                                     </div>
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="paragraph">
-                        <p>The pseudocode for <code>ExceptionTranslationFilter</code> looks something like this:</p>
+                        <p>The pseudocode for <code>ExceptionTranslationFilter</code> looks something like this:</br>
+                            ExceptionTranslationFilter的伪代码如下所示:
+                        </p>
                     </div>
                     <div class="listingblock">
                         <div class="title">ExceptionTranslationFilter pseudocode</div>
@@ -4408,16 +4435,21 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                         <table>
                             <tr>
                                 <td><i class="conum" data-value="1"></i><b>1</b></td>
-                                <td>You will recall from <a href="#servlet-filters-review">A Review of <code>Filter</code>s</a> that invoking <code>FilterChain.doFilter(request, response)</code> is the equivalent of invoking the rest of the application. This
-                                    means that if another part of the application, (i.e. <a href="#servlet-authorization-filtersecurityinterceptor"><code>FilterSecurityInterceptor</code></a> or method security) throws an <code>AuthenticationException</code>                                    or <code>AccessDeniedException</code> it will be caught and handled here.</td>
+                                <td>You will recall from <a href="#servlet-filters-review">A Review of <code>Filter</code>s</a> that invoking <code>FilterChain.doFilter(request, response)</code> is the equivalent of invoking the rest of the application. This means that if another part of the application, (i.e. <a href="#servlet-authorization-filtersecurityinterceptor"><code>FilterSecurityInterceptor</code></a> or method security) throws an <code>AuthenticationException</code> or <code>AccessDeniedException</code> it will be caught and handled here.
+您将从调用FilterChain的过滤器回顾中回忆起。doFilter(请求、响应)相当于调用应用程序的其余部分。这 意味着如果应用程序的另一部分(如FilterSecurityInterceptor或方法安全)抛出AuthenticationException或AccessDeniedException，它将在这里被捕获和处理。
+                                </td>
                             </tr>
                             <tr>
                                 <td><i class="conum" data-value="2"></i><b>2</b></td>
-                                <td>If the user is not authenticated or it is an <code>AuthenticationException</code>, then <em>Start Authentication</em>.</td>
+                                <td>If the user is not authenticated or it is an <code>AuthenticationException</code>, then <em>Start Authentication</em>.
+如果用户未经过身份验证或是AuthenticationException，则启动身份验证。
+                                </td>
                             </tr>
                             <tr>
                                 <td><i class="conum" data-value="3"></i><b>3</b></td>
-                                <td>Otherwise, <em>Access Denied</em></td>
+                                <td>Otherwise, <em>Access Denied</em>
+否则,拒绝访问。
+                                </td>
                             </tr>
                         </table>
                     </div>
@@ -4426,87 +4458,134 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
         </div>
         <div class="sect1">
             <h2 id="servlet-authentication"><a class="anchor" href="#servlet-authentication"></a>10. Authentication</h2>
+            <span>10. 身份验证</span>
             <div class="sectionbody">
                 <div class="paragraph">
-                    <p>Spring Security provides comprehensive support for <a href="#authentication">Authentication</a>. This section discusses:</p>
+                    <p>Spring Security provides comprehensive support for <a href="#authentication">Authentication</a>. This section discusses:</br>
+                        Spring Security提供了对身份验证的全面支持。本节讨论:
+                    </p>
                 </div>
                 <div id="servlet-authentication-architecture" class="paragraph">
-                    <p><strong>Architecture Components</strong></p>
+                    <p><strong>Architecture Components</strong></br>
+                        <strong>架构组件</strong>
+                    </p>
                 </div>
                 <div class="paragraph">
-                    <p>This section describes the main architectural components of Spring Security&#8217;s used in Servlet authentication. If you need concrete flows that explain how these pieces fit together, look at the <a href="#servlet-authentication-mechanisms">Authentication Mechanism</a>                        specific sections.</p>
+                    <p>This section describes the main architectural components of Spring Security&#8217;s used in Servlet authentication. If you need concrete flows that explain how these pieces fit together, look at the <a href="#servlet-authentication-mechanisms">Authentication Mechanism</a> specific sections.</br>
+                        本节描述Spring Security在Servlet身份验证中使用的主要架构组件。如果您需要具体的流来解释这些部分如何组合在一起，请查看Authentication Mechanism特定的部分。
+                    </p>
                 </div>
                 <div class="ulist">
                     <ul>
                         <li>
-                            <p><a href="#servlet-authentication-securitycontextholder">SecurityContextHolder</a> - The <code>SecurityContextHolder</code> is where Spring Security stores the details of who is <a href="#authentication">authenticated</a>.</p>
+                            <p><a href="#servlet-authentication-securitycontextholder">SecurityContextHolder</a> - The <code>SecurityContextHolder</code> is where Spring Security stores the details of who is <a href="#authentication">authenticated</a>.</br>
+                                SecurityContextHolder——SecurityContextHolder是Spring Security存储身份验证的详细信息的地方。
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-authentication-securitycontext">SecurityContext</a> - is obtained from the <code>SecurityContextHolder</code> and contains the <code>Authentication</code> of the currently authenticated user.</p>
+                            <p><a href="#servlet-authentication-securitycontext">SecurityContext</a> - is obtained from the <code>SecurityContextHolder</code> and contains the <code>Authentication</code> of the currently authenticated user.</br>
+                                SecurityContext -从SecurityContextHolder中获取，包含当前认证用户的认证信息。
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-authentication-authentication">Authentication</a> - Can be the input to <code>AuthenticationManager</code> to provide the credentials a user has provided to authenticate or the current user from the <code>SecurityContext</code>.</p>
+                            <p><a href="#servlet-authentication-authentication">Authentication</a> - Can be the input to <code>AuthenticationManager</code> to provide the credentials a user has provided to authenticate or the current user from the <code>SecurityContext</code>.</br>
+                                身份验证——可以是AuthenticationManager的输入，以提供用户为身份验证提供的凭据，也可以是来自SecurityContext的当前用户。
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-authentication-granted-authority">GrantedAuthority</a> - An authority that is granted to the principal on the <code>Authentication</code> (i.e. roles, scopes, etc.)</p>
+                            <p><a href="#servlet-authentication-granted-authority">GrantedAuthority</a> - An authority that is granted to the principal on the <code>Authentication</code> (i.e. roles, scopes, etc.)<br>
+                                授予权限——授予主体身份验证的权限(即角色、范围等)。
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-authentication-authenticationmanager">AuthenticationManager</a> - the API that defines how Spring Security&#8217;s Filters perform <a href="#authentication">authentication</a>.</p>
+                            <p><a href="#servlet-authentication-authenticationmanager">AuthenticationManager</a> - the API that defines how Spring Security&#8217;s Filters perform <a href="#authentication">authentication</a>.</br>
+                                AuthenticationManager—定义Spring Security的过滤器如何执行身份验证的API。
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-authentication-providermanager">ProviderManager</a> - the most common implementation of <code>AuthenticationManager</code>.</p>
+                            <p><a href="#servlet-authentication-providermanager">ProviderManager</a> - the most common implementation of <code>AuthenticationManager</code>.</br>
+                                ProviderManager——AuthenticationManager最常见的实现。
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-authentication-authenticationprovider">AuthenticationProvider</a> - used by <code>ProviderManager</code> to perform a specific type of authentication.</p>
+                            <p><a href="#servlet-authentication-authenticationprovider">AuthenticationProvider</a> - used by <code>ProviderManager</code> to perform a specific type of authentication.</br>
+                                AuthenticationProvider——由ProviderManager使用来执行特定类型的身份验证。
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-authentication-authenticationentrypoint">Request Credentials with <code>AuthenticationEntryPoint</code></a> - used for requesting credentials from a client (i.e. redirecting to a log in page, sending a <code>WWW-Authenticate</code>                                response, etc.)</p>
+                            <p><a href="#servlet-authentication-authenticationentrypoint">Request Credentials with <code>AuthenticationEntryPoint</code></a> - used for requesting credentials from a client (i.e. redirecting to a log in page, sending a <code>WWW-Authenticate</code> response, etc.)</br>
+                                使用AuthenticationEntryPoint请求凭据——用于从客户端请求凭据(即重定向到登录页面，发送WWW-Authenticate响应，等等)。
+                            </p>
                         </li>
                         <li>
                             <p><a href="#servlet-authentication-abstractprocessingfilter">AbstractAuthenticationProcessingFilter</a> - a base <code>Filter</code> used for authentication. This also gives a good idea of the high level flow of authentication
-                                and how pieces work together.</p>
+                                and how pieces work together.</br>
+                                一个用于身份验证的基本过滤器。这还可以很好地了解高层次的身份验证流程以及各个部分如何协同工作。
+                            </p>
                         </li>
                     </ul>
                 </div>
                 <div id="servlet-authentication-mechanisms" class="paragraph">
-                    <p><strong>Authentication Mechanisms</strong></p>
+                    <p><strong>Authentication Mechanisms</strong></br>
+                        <strong>身份验证机制</strong>
+                    </p>
                 </div>
                 <div class="ulist">
                     <ul>
                         <li>
-                            <p><a href="#servlet-authentication-unpwd">Username and Password</a> - how to authenticate with a username/password</p>
+                            <p><a href="#servlet-authentication-unpwd">Username and Password</a> - how to authenticate with a username/password</br>
+                                用户名和密码-如何使用用户名/密码进行身份验证
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#oauth2login">OAuth 2.0 Login</a> - OAuth 2.0 Log In with OpenID Connect and non-standard OAuth 2.0 Login (i.e. GitHub)</p>
+                            <p><a href="#oauth2login">OAuth 2.0 Login</a> - OAuth 2.0 Log In with OpenID Connect and non-standard OAuth 2.0 Login (i.e. GitHub)</br>
+                                OAuth 2.0登录- OAuth 2.0使用OpenID登录和非标准的OAuth 2.0登录(例如GitHub)
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-saml2">SAML 2.0 Login</a> - SAML 2.0 Log In</p>
+                            <p><a href="#servlet-saml2">SAML 2.0 Login</a> - SAML 2.0 Log In</br>
+                                SAML 2.0登录—SAML 2.0登录
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-cas">Central Authentication Server (CAS)</a> - Central Authentication Server (CAS) Support</p>
+                            <p><a href="#servlet-cas">Central Authentication Server (CAS)</a> - Central Authentication Server (CAS) Support</br>
+                                CAS (Central Authentication Server)—CAS支持
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-rememberme">Remember Me</a> - How to remember a user past session expiration</p>
+                            <p><a href="#servlet-rememberme">Remember Me</a> - How to remember a user past session expiration</br>
+                                记住我-如何记住一个用户的会话过期
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-jaas">JAAS Authentication</a> - Authenticate with JAAS</p>
+                            <p><a href="#servlet-jaas">JAAS Authentication</a> - Authenticate with JAAS</br>
+                                JAAS身份验证-使用JAAS进行身份验证
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-openid">OpenID</a> - OpenID Authentication (not to be confused with OpenID Connect)</p>
+                            <p><a href="#servlet-openid">OpenID</a> - OpenID Authentication (not to be confused with OpenID Connect)</br>
+                                OpenID - OpenID认证(不要与OpenID连接混淆)
+                            </p>
                         </li>
                         <li>
                             <p><a href="#servlet-preauth">Pre-Authentication Scenarios</a> - Authenticate with an external mechanism such as <a href="https://www.siteminder.com/">SiteMinder</a> or Java EE security but still use Spring Security for authorization
-                                and protection against common exploits.</p>
+                                and protection against common exploits.</br>
+                                Pre-Authentication场景——使用外部机制(如SiteMinder或Java EE安全性)进行身份验证，但仍然使用Spring security进行授权和保护，以防止常见攻击。
+                            </p>
                         </li>
                         <li>
-                            <p><a href="#servlet-x509">X509 Authentication</a> - X509 Authentication</p>
+                            <p><a href="#servlet-x509">X509 Authentication</a> - X509 Authentication</br>
+                                X509认证- X509认证
+                            </p>
                         </li>
                     </ul>
                 </div>
                 <div class="sect2">
                     <h3 id="servlet-authentication-securitycontextholder"><a class="anchor" href="#servlet-authentication-securitycontextholder"></a>10.1. SecurityContextHolder</h3>
                     <div class="paragraph">
-                        <p>At the heart of Spring Security&#8217;s authentication model is the <code>SecurityContextHolder</code>. It contains the <a href="#servlet-authentication-securitycontext">SecurityContext</a>.</p>
+                        <p>At the heart of Spring Security&#8217;s authentication model is the <code>SecurityContextHolder</code>. It contains the <a href="#servlet-authentication-securitycontext">SecurityContext</a>.<br>
+                            Spring Security的身份验证模型的核心是SecurityContextHolder。它包含SecurityContext。
+                        </p>
                     </div>
                     <div class="imageblock">
                         <div class="content">
@@ -4515,10 +4594,14 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                     </div>
                     <div class="paragraph">
                         <p>The <code>SecurityContextHolder</code> is where Spring Security stores the details of who is <a href="#authentication">authenticated</a>. Spring Security does not care how the <code>SecurityContextHolder</code> is populated. If
-                            it contains a value, then it is used as the currently authenticated user.</p>
+                            it contains a value, then it is used as the currently authenticated user.</br>
+                            SecurityContextHolder是Spring Security存储身份验证的详细信息的地方。Spring Security并不关心SecurityContextHolder是如何填充的。如果它包含一个值，那么它就被用作当前经过身份验证的用户。
+                        </p>
                     </div>
                     <div class="paragraph">
-                        <p>The simplest way to indicate a user is authenticated is to set the <code>SecurityContextHolder</code> directly.</p>
+                        <p>The simplest way to indicate a user is authenticated is to set the <code>SecurityContextHolder</code> directly.</br>
+                            指示用户身份验证的最简单方法是直接设置SecurityContextHolder。
+                        </p>
                     </div>
                     <div class="exampleblock">
                         <div class="title">Example 53. Setting <code>SecurityContextHolder</code></div>
@@ -4550,21 +4633,28 @@ SecurityContextHolder.setContext(context) <i class="conum" data-value="3"></i><b
                         <table>
                             <tr>
                                 <td><i class="conum" data-value="1"></i><b>1</b></td>
-                                <td>We start by creating an empty <code>SecurityContext</code>. It is important to create a new <code>SecurityContext</code> instance instead of using <code>SecurityContextHolder.getContext().setAuthentication(authentication)</code>                                    to avoid race conditions across multiple threads.</td>
+                                <td>We start by creating an empty <code>SecurityContext</code>. It is important to create a new <code>SecurityContext</code> instance instead of using <code>SecurityContextHolder.getContext().setAuthentication(authentication)</code>to avoid race conditions across multiple threads.
+我们首先创建一个空的SecurityContext。重要的是要创建一个新的SecurityContext实例，而不是使用securitycontexthholder . getcontext (). setauthentication(身份验证)，以避免多线程之间的竞争条件。
+                                </td>
                             </tr>
                             <tr>
                                 <td><i class="conum" data-value="2"></i><b>2</b></td>
-                                <td>Next we create a new <a href="#servlet-authentication-authentication"><code>Authentication</code></a> object. Spring Security does not care what type of <code>Authentication</code> implementation is set on the <code>SecurityContext</code>.
-                                    Here we use <code>TestingAuthenticationToken</code> because it is very simple. A more common production scenario is <code>UsernamePasswordAuthenticationToken(userDetails, password, authorities)</code>.</td>
+                                <td>Next we create a new <a href="#servlet-authentication-authentication"><code>Authentication</code></a> object. Spring Security does not care what type of <code>Authentication</code> implementation is set on the <code>SecurityContext</code>. Here we use <code>TestingAuthenticationToken</code> because it is very simple. A more common production scenario is <code>UsernamePasswordAuthenticationToken(userDetails, password, authorities)</code>.
+接下来，我们创建一个新的Authentication对象。Spring Security并不关心在SecurityContext上设置了什么类型的身份验证实现。这里我们使用TestingAuthenticationToken，因为它非常简单。更常见的生产场景是UsernamePasswordAuthenticationToken(userDetails、密码、权限)。
+                                </td>
                             </tr>
                             <tr>
                                 <td><i class="conum" data-value="3"></i><b>3</b></td>
-                                <td>Finally, we set the <code>SecurityContext</code> on the <code>SecurityContextHolder</code>. Spring Security will use this information for <a href="#servlet-authorization">authorization</a>.</td>
+                                <td>Finally, we set the <code>SecurityContext</code> on the <code>SecurityContextHolder</code>. Spring Security will use this information for <a href="#servlet-authorization">authorization</a>.
+最后，我们在SecurityContextHolder上设置SecurityContext。Spring Security将使用此信息进行授权。
+                                </td>
                             </tr>
                         </table>
                     </div>
                     <div class="paragraph">
-                        <p>If you wish to obtain information about the authenticated principal, you can do so by accessing the <code>SecurityContextHolder</code>.</p>
+                        <p>If you wish to obtain information about the authenticated principal, you can do so by accessing the <code>SecurityContextHolder</code>.</br>
+                            如果希望获得关于经过身份验证的主体的信息，可以通过访问SecurityContextHolder来实现。
+                        </p>
                     </div>
                     <div class="exampleblock">
                         <div class="title">Example 54. Access Currently Authenticated User</div>
@@ -4593,14 +4683,23 @@ val authorities = authentication.authorities</code></pre>
                     </div>
                     <div class="paragraph">
                         <p>By default the <code>SecurityContextHolder</code> uses a <code>ThreadLocal</code> to store these details, which means that the <code>SecurityContext</code> is always available to methods in the same thread, even if the <code>SecurityContext</code>                            is not explicitly passed around as an argument to those methods. Using a <code>ThreadLocal</code> in this way is quite safe if care is taken to clear the thread after the present principal&#8217;s request is processed. Spring
-                            Security&#8217;s <a href="#servlet-filterchainproxy">FilterChainProxy</a> ensures that the <code>SecurityContext</code> is always cleared.</p>
+                            Security&#8217;s <a href="#servlet-filterchainproxy">FilterChainProxy</a> ensures that the <code>SecurityContext</code> is always cleared.</br>
+                            默认情况下，SecurityContext使用ThreadLocal来存储这些详细信息，这意味着SecurityContext对于同一个线程中的方法总是可用的，即使SecurityContext没有显式地作为参数传递给这些方法。
+                            以这种方式使用ThreadLocal是相当安全的，如果在处理当前主体的请求后小心地清除线程。Spring Security的FilterChainProxy确保SecurityContext总是被清除。
+                        </p>
                     </div>
                     <div class="paragraph">
                         <p>Some applications aren&#8217;t entirely suitable for using a <code>ThreadLocal</code>, because of the specific way they work with threads. For example, a Swing client might want all threads in a Java Virtual Machine to use the
                             same security context.
                             <code>SecurityContextHolder</code> can be configured with a strategy on startup to specify how you would like the context to be stored. For a standalone application you would use the <code>SecurityContextHolder.MODE_GLOBAL</code>                            strategy. Other applications might want to have threads spawned by the secure thread also assume the same security identity. This is achieved by using <code>SecurityContextHolder.MODE_INHERITABLETHREADLOCAL</code>. You can
                             change the mode from the default <code>SecurityContextHolder.MODE_THREADLOCAL</code> in two ways. The first is to set a system property, the second is to call a static method on <code>SecurityContextHolder</code>. Most applications
-                            won&#8217;t need to change from the default, but if you do, take a look at the JavaDoc for <code>SecurityContextHolder</code> to learn more.</p>
+                            won&#8217;t need to change from the default, but if you do, take a look at the JavaDoc for <code>SecurityContextHolder</code> to learn more.</br>
+                            有些应用程序并不完全适合使用ThreadLocal，因为它们处理线程的特定方式。例如，Swing客户机可能希望Java虚拟机中的所有线程都使用相同的安全上下文。
+                            SecurityContextHolder可以在启动时配置一个策略，以指定您希望如何存储上下文。对于独立的应用程序，您将使用SecurityContextHolder。MODE_GLOBAL策略。
+                            其他应用程序可能希望安全线程生成的线程也采用相同的安全标识。这是通过使用securitycontexholder . mode_inheritablethreadlocal实现的。
+                            您可以更改默认的SecurityContextHolder模式。MODE_THREADLOCAL有两种方式。第一个是设置系统属性，第二个是调用SecurityContextHolder上的静态方法。
+                            大多数应用程序不需要改变默认设置，但如果需要，请查看SecurityContextHolder的JavaDoc以了解更多信息。
+                        </p>
                     </div>
                 </div>
                 <div class="sect2">
