@@ -3061,29 +3061,45 @@ Is HTTP Public Key Pinning Dead?</a> and <a href="https://scotthelme.co.uk/im-gi
         </div>
         <div class="sect1">
             <h2 id="modules"><a class="anchor" href="#modules"></a>6. Project Modules and Dependencies</h2>
+            <span>6. 项目模块和依赖项</span>
             <div class="sectionbody">
                 <div class="paragraph">
                     <p>In Spring Security 3.0, the codebase was sub-divided into separate jars which more clearly separate different functionality areas and third-party dependencies. If you use Maven to build your project, these are the modules you should
                         add to your <code>pom.xml</code>. Even if you do not use Maven, we recommend that you consult the <code>pom.xml</code> files to get an idea of third-party dependencies and versions. Another good idea is to examine the libraries
-                        that are included in the sample applications.</p>
+                        that are included in the sample applications.</br>
+                        在Spring Security 3.0中，代码库被细分为独立的jar，更清晰地区分了不同的功能区域和第三方依赖。
+                        如果您使用Maven构建项目，那么应该将这些模块添加到您的pomw .xml中。即使您不使用Maven，我们也建议您参考pomo .xml文件来了解第三方依赖关系和版本。
+                        另一个好主意是检查示例应用程序中包含的库。
+                    </p>
                 </div>
                 <div class="paragraph">
                     <p>This section provides a reference of the modules in Spring Security and the additional dependencies that they require in order to function in a running application. We don&#8217;t include dependencies that are only used when building
-                        or testing Spring Security itself. Nor do we include transitive dependencies which are required by external dependencies.</p>
+                        or testing Spring Security itself. Nor do we include transitive dependencies which are required by external dependencies.</br>
+                        本节提供Spring Security中的模块的引用，以及它们在运行中的应用程序中运行所需的附加依赖项。
+                        我们不包括仅在构建或测试Spring Security本身时使用的依赖项。我们也不包括外部依赖所需要的传递依赖。
+                    </p>
                 </div>
                 <div class="paragraph">
                     <p>The version of Spring required is listed on the project website, so the specific versions are omitted for Spring dependencies below. Note that some of the dependencies listed as "optional" below may still be required for other non-security
                         functionality in a Spring application. Also dependencies listed as "optional" may not actually be marked as such in the project&#8217;s Maven POM files if they are used in most applications. They are "optional" only in the sense
-                        that you don&#8217;t need them unless you are using the specified functionality.</p>
+                        that you don&#8217;t need them unless you are using the specified functionality.</br>
+                        项目网站上列出了所需的Spring版本，因此下面的Spring依赖项省略了特定的版本。注意，下面列出的一些“可选”依赖项对于Spring应用程序中的其他非安全性功能可能仍然是必需的。
+                        此外，如果在大多数应用程序中使用了“可选”的依赖项，那么在项目的Maven POM文件中可能并不会将它们标记为“可选”。它们是“可选的”，只有在使用指定功能时才需要它们。
+                    </p>
                 </div>
                 <div class="paragraph">
-                    <p>Where a module depends on another Spring Security module, the non-optional dependencies of the module it depends on are also assumed to be required and are not listed separately.</p>
+                    <p>Where a module depends on another Spring Security module, the non-optional dependencies of the module it depends on are also assumed to be required and are not listed separately.</br>
+                        当一个模块依赖于另一个Spring Security模块时，它所依赖的模块的非可选依赖项也被认为是必需的，没有单独列出。
+                    </p>
                 </div>
                 <div class="sect2">
                     <h3 id="spring-security-core"><a class="anchor" href="#spring-security-core"></a>6.1. Core&#8201;&#8212;&#8201;<code>spring-security-core.jar</code></h3>
                     <div class="paragraph">
                         <p>This module contains core authentication and access-contol classes and interfaces, remoting support, and basic provisioning APIs. It is required by any application that uses Spring Security. It supports standalone applications,
-                            remote clients, method (service layer) security, and JDBC user provisioning. It contains the following top-level packages:</p>
+                            remote clients, method (service layer) security, and JDBC user provisioning. It contains the following top-level packages:</br>
+                          该模块包含核心身份验证和访问控制类和接口、远程支持和基本配置api。任何使用Spring Security的应用程序都需要它。
+                          它支持独立应用程序、远程客户端、方法(服务层)安全性和JDBC用户配置。它包含以下顶级包:
+                        </p>
                     </div>
                     <div class="ulist">
                         <ul>
@@ -3124,7 +3140,9 @@ Is HTTP Public Key Pinning Dead?</a> and <a href="https://scotthelme.co.uk/im-gi
                                     <p class="tableblock">1.6.2</p>
                                 </td>
                                 <td class="tableblock halign-left valign-top">
-                                    <p class="tableblock">Required if the Ehcache-based user cache implementation is used (optional).</p>
+                                    <p class="tableblock">Required if the Ehcache-based user cache implementation is used (optional).</br>
+                                        如果使用基于ehcache的用户缓存实现是必需的(可选)。
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
@@ -3133,7 +3151,9 @@ Is HTTP Public Key Pinning Dead?</a> and <a href="https://scotthelme.co.uk/im-gi
                                 </td>
                                 <td class="tableblock halign-left valign-top"></td>
                                 <td class="tableblock halign-left valign-top">
-                                    <p class="tableblock">Method security is based on Spring AOP</p>
+                                    <p class="tableblock">Method security is based on Spring AOP</br>
+                                        方法安全性基于Spring AOP
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
@@ -3777,14 +3797,19 @@ Is HTTP Public Key Pinning Dead?</a> and <a href="https://scotthelme.co.uk/im-gi
         <div class="openblock partintro">
             <div class="content">
                 Spring Security integrates with the Servlet Container by using a standard Servlet <code>Filter</code>. This means it works with any application that runs in a Servlet Container. More concretely, you do not need to use Spring in your Servlet-based
-                application to take advantage of Spring Security.
+                application to take advantage of Spring Security.</br>
+                Spring Security通过使用一个标准的Servlet过滤器与Servlet容器集成。这意味着它可以与任何在Servlet容器中运行的应用程序一起工作。
+                更具体地说，您不需要在基于servlet的应用程序中使用Spring来利用Spring安全性。
             </div>
         </div>
         <div class="sect1">
             <h2 id="servlet-hello"><a class="anchor" href="#servlet-hello"></a>8. Hello Spring Security</h2>
+            <span>8. Hello Spring Security</span>
             <div class="sectionbody">
                 <div class="paragraph">
-                    <p>This section covers the minimum setup for how to use Spring Security with Spring Boot.</p>
+                    <p>This section covers the minimum setup for how to use Spring Security with Spring Boot.</br>
+                        本节介绍如何在Spring Boot中使用Spring Security的最小设置。
+                    </p>
                 </div>
                 <div class="admonitionblock note">
                     <table>
@@ -3795,7 +3820,9 @@ Is HTTP Public Key Pinning Dead?</a> and <a href="https://scotthelme.co.uk/im-gi
                             <td class="content">
                                 <div class="paragraph">
                                     <p>The completed application can be found at <a href="https://github.com/spring-projects/spring-security/tree/5.4.1/samples/boot/helloworld">samples/boot/helloworld</a> For your convenience, you can download a minimal
-                                        Spring Boot + Spring Security application by <a href="https://start.spring.io/starter.zip?type=maven-project&amp;language=java&amp;packaging=jar&amp;jvmVersion=1.8&amp;groupId=example&amp;artifactId=hello-security&amp;name=hello-security&amp;description=Hello%20Security&amp;packageName=example.hello-security&amp;dependencies=web,security">clicking here</a>.</p>
+                                        Spring Boot + Spring Security application by <a href="https://start.spring.io/starter.zip?type=maven-project&amp;language=java&amp;packaging=jar&amp;jvmVersion=1.8&amp;groupId=example&amp;artifactId=hello-security&amp;name=hello-security&amp;description=Hello%20Security&amp;packageName=example.hello-security&amp;dependencies=web,security">clicking here</a>.</br>
+                                        完整的应用程序可以在samples/boot/helloworld找到。为了方便，你可以点击这里下载一个最小的Spring boot + Spring Security应用程序。
+                                    </p>
                                 </div>
                             </td>
                         </tr>
@@ -3803,15 +3830,20 @@ Is HTTP Public Key Pinning Dead?</a> and <a href="https://scotthelme.co.uk/im-gi
                 </div>
                 <div class="sect2">
                     <h3 id="servlet-hello-dependencies"><a class="anchor" href="#servlet-hello-dependencies"></a>8.1. Updating Dependencies</h3>
+                    <span>8.1 更新依赖</span>
                     <div class="paragraph">
-                        <p>The only step you need to do is update the dependencies by using <a href="#getting-maven-boot">Maven</a> or <a href="#getting-gradle-boot">Gradle</a>.</p>
+                        <p>The only step you need to do is update the dependencies by using <a href="#getting-maven-boot">Maven</a> or <a href="#getting-gradle-boot">Gradle</a>.</br>
+                            您需要做的唯一步骤是使用Maven或Gradle更新依赖项。
+                        </p>
                     </div>
                 </div>
                 <div class="sect2">
                     <h3 id="servlet-hello-starting"><a class="anchor" href="#servlet-hello-starting"></a>8.2. Starting Hello Spring Security Boot</h3>
                     <div class="paragraph">
                         <p>You can now <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-running-with-the-maven-plugin">run the Spring Boot application</a> by using the Maven Plugin&#8217;s <code>run</code> goal. The
-                            following example shows how to do so (and the beginning of the output from doing so):</p>
+                            following example shows how to do so (and the beginning of the output from doing so):</br>
+                            现在，您可以使用Maven Plugin的运行目标运行Spring Boot应用程序。下面的例子演示了如何这样做(以及由此产生的输出的开头):
+                        </p>
                     </div>
                     <div class="exampleblock">
                         <div class="title">Example 50. Running Spring Boot Application</div>
@@ -3834,71 +3866,109 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                     <h3 id="servlet-hello-auto-configuration"><a class="anchor" href="#servlet-hello-auto-configuration"></a>8.3. Spring Boot Auto Configuration</h3>
                     <div class="paragraph">
                         <p>Spring Boot automatically:</p>
+                        <span>Spring Boot 自动:</span>
                     </div>
                     <div class="ulist">
                         <ul>
                             <li>
                                 <p>Enables Spring Security&#8217;s default configuration, which creates a servlet <code>Filter</code> as a bean named <code>springSecurityFilterChain</code>. This bean is responsible for all the security (protecting the application
-                                    URLs, validating submitted username and passwords, redirecting to the log in form, and so on) within your application.</p>
+                                    URLs, validating submitted username and passwords, redirecting to the log in form, and so on) within your application.</br>
+                                    启用Spring Security的默认配置，它将创建一个名为springSecurityFilterChain的bean作为servlet过滤器。此bean负责应用程序中的所有安全性(保护应用程序url、验证提交的用户名和密码、重定向到登录表单，等等)。
+                                </p>
                             </li>
                             <li>
-                                <p>Creates a <code>UserDetailsService</code> bean with a username of <code>user</code> and a randomly generated password that is logged to the console.</p>
+                                <p>Creates a <code>UserDetailsService</code> bean with a username of <code>user</code> and a randomly generated password that is logged to the console.</br>
+                                    创建一个UserDetailsService bean，该bean具有用户名user和随机生成的登录到控制台的密码。
+
+                                </p>
                             </li>
                             <li>
-                                <p>Registers the <code>Filter</code> with a bean named <code>springSecurityFilterChain</code> with the Servlet container for every request.</p>
+                                <p>Registers the <code>Filter</code> with a bean named <code>springSecurityFilterChain</code> with the Servlet container for every request.</br>
+                                    为每个请求向Servlet容器注册一个名为springSecurityFilterChain的bean的过滤器。
+                                </p>
                             </li>
                         </ul>
                     </div>
                     <div class="paragraph">
-                        <p>Spring Boot is not configuring much, but it does a lot. A summary of the features follows:</p>
+                        <p>Spring Boot is not configuring much, but it does a lot. A summary of the features follows:</br>
+                            Spring Boot没有配置很多，但是它做了很多。功能概述如下:
+                        </p>
                     </div>
                     <div class="ulist">
                         <ul>
                             <li>
-                                <p>Require an authenticated user for any interaction with the application</p>
+                                <p>Require an authenticated user for any interaction with the application</br>
+                                    与应用程序的任何交互都需要经过身份验证的用户
+                                </p>
                             </li>
                             <li>
-                                <p>Generate a default login form for you</p>
+                                <p>Generate a default login form for you</br>
+                                    为您生成一个默认的登录表单
+                                </p>
                             </li>
                             <li>
-                                <p>Let the user with a username of <code>user</code> and a password that is logged to the console to authenticate with form-based authentication (in the preceding example, the password is <code>8e557245-73e2-4286-969a-ff57fe326336</code>)</p>
+                                <p>Let the user with a username of <code>user</code> and a password that is logged to the console to authenticate with form-based authentication (in the preceding example, the password is <code>8e557245-73e2-4286-969a-ff57fe326336</code>)</br>
+                                    让用户名为user和密码的用户登录到控制台，使用基于表单的身份验证(在前面的示例中，密码为8e557245-73e2-4286-969a-ff57fe326336)
+                                </p>
                             </li>
                             <li>
-                                <p>Protects the password storage with BCrypt</p>
+                                <p>Protects the password storage with BCrypt</br>
+                                    使用BCrypt保护密码存储
+                                </p>
                             </li>
                             <li>
-                                <p>Lets the user log out</p>
+                                <p>Lets the user log out</br>
+                                    让用户退出
+                                </p>
                             </li>
                             <li>
-                                <p><a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">CSRF attack</a> prevention</p>
+                                <p><a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">CSRF attack</a> prevention</br>
+                                    CSRF攻击预防
+                                </p>
                             </li>
                             <li>
-                                <p><a href="https://en.wikipedia.org/wiki/Session_fixation">Session Fixation</a> protection</p>
+                                <p><a href="https://en.wikipedia.org/wiki/Session_fixation">Session Fixation</a> protection</br>
+                                    会话固定保护
+                                </p>
                             </li>
                             <li>
-                                <p>Security Header integration</p>
+                                <p>Security Header integration</br>
+                                    安全头集成
+                                </p>
                                 <div class="ulist">
                                     <ul>
                                         <li>
-                                            <p><a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">HTTP Strict Transport Security</a> for secure requests</p>
+                                            <p><a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">HTTP Strict Transport Security</a> for secure requests</br>
+                                                HTTP严格传输安全用于安全请求
+                                            </p>
                                         </li>
                                         <li>
-                                            <p><a href="https://msdn.microsoft.com/en-us/library/ie/gg622941(v=vs.85).aspx">X-Content-Type-Options</a> integration</p>
+                                            <p><a href="https://msdn.microsoft.com/en-us/library/ie/gg622941(v=vs.85).aspx">X-Content-Type-Options</a> integration</br>
+                                                X-Content-Type-Options集成
+                                            </p>
                                         </li>
                                         <li>
-                                            <p>Cache Control (can be overridden later by your application to allow caching of your static resources)</p>
+                                            <p>Cache Control (can be overridden later by your application to allow caching of your static resources)</br>
+                                                缓存控制(稍后可以被应用程序覆盖，以允许缓存静态资源)
+                                            </p>
                                         </li>
                                         <li>
-                                            <p><a href="https://msdn.microsoft.com/en-us/library/dd565647(v=vs.85).aspx">X-XSS-Protection</a> integration</p>
+                                            <p><a href="https://msdn.microsoft.com/en-us/library/dd565647(v=vs.85).aspx">X-XSS-Protection</a> integration</br>
+                                                X-XSS-Protection集成
+                                            </p>
                                         </li>
                                         <li>
-                                            <p>X-Frame-Options integration to help prevent <a href="https://en.wikipedia.org/wiki/Clickjacking">Clickjacking</a></p>
+                                            <p>X-Frame-Options integration to help prevent <a href="https://en.wikipedia.org/wiki/Clickjacking">Clickjacking</a></br>
+                                                X-Frame-Options集成，帮助防止点击劫持
+                                            </p>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li>
-                                <p>Integrate with the following Servlet API methods:</p>
+                                <p>Integrate with the following Servlet API methods:</br>
+                                    与以下Servlet API方法集成:
+                                </p>
                                 <div class="ulist">
                                     <ul>
                                         <li>
@@ -3926,16 +3996,23 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
         </div>
         <div class="sect1">
             <h2 id="servlet-architecture"><a class="anchor" href="#servlet-architecture"></a>9. Servlet Security: The Big Picture</h2>
+            <span>9. Servlet安全性:全景图</span>
             <div class="sectionbody">
                 <div class="paragraph">
                     <p>This section discusses Spring Security&#8217;s high level architecture within Servlet based applications. We build on this high level understanding within <a href="#servlet-authentication">Authentication</a>, <a href="#servlet-authorization">Authorization</a>,
-                        <a href="#servlet-exploits">Protection Against Exploits</a> sections of the reference.</p>
+                        <a href="#servlet-exploits">Protection Against Exploits</a> sections of the reference.</br>
+                        本节讨论Spring Security在基于Servlet的应用程序中的高层体系结构。
+                        我们在引用的Authentication、Authorization、Protection Against exploit部分中建立了这种高层次的理解。
+                    </p>
                 </div>
                 <div class="sect2">
                     <h3 id="servlet-filters-review"><a class="anchor" href="#servlet-filters-review"></a>9.1. A Review of <code>Filter</code>s</h3>
+                    <span>9.1. Filter 回顾</span>
                     <div class="paragraph">
                         <p>Spring Security&#8217;s Servlet support is based on Servlet <code>Filter</code>s, so it is helpful to look at the role of <code>Filter</code>s generally first. The picture below shows the typical layering of the handlers for a
-                            single HTTP request.</p>
+                            single HTTP request.</br>
+                            Spring Security的Servlet支持是基于Servlet过滤器的，所以首先看看过滤器的作用是很有帮助的。下图显示了单个HTTP请求的处理程序的典型分层。
+                        </p>
                     </div>
                     <div id="servlet-filterchain-figure" class="imageblock">
                         <div class="content">
@@ -3946,20 +4023,30 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                     <div class="paragraph">
                         <p>The client sends a request to the application, and the container creates a <code>FilterChain</code> which contains the <code>Filter</code>s and <code>Servlet</code> that should process the <code>HttpServletRequest</code> based
                             on the path of the request URI. In a Spring MVC application the <code>Servlet</code> is an instance of <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-servlet"><code>DispatcherServlet</code></a>.
-                            At most one <code>Servlet</code> can handle a single <code>HttpServletRequest</code> and <code>HttpServletResponse</code>. However, more than one <code>Filter</code> can be used to:</p>
+                            At most one <code>Servlet</code> can handle a single <code>HttpServletRequest</code> and <code>HttpServletResponse</code>. However, more than one <code>Filter</code> can be used to:</br>
+                            客户端向应用程序发送请求，容器创建一个包含过滤器和Servlet的FilterChain，这些过滤器和Servlet应该基于请求URI的路径来处理HttpServletRequest。
+                            在Spring MVC应用程序中，Servlet是DispatcherServlet的一个实例。
+                            最多一个Servlet可以处理单个HttpServletRequest和HttpServletResponse。但是，可以使用多个Filter:
+                        </p>
                     </div>
                     <div class="ulist">
                         <ul>
                             <li>
-                                <p>Prevent downstream <code>Filter</code>s or the <code>Servlet</code> from being invoked. In this instance the <code>Filter</code> will typically write the <code>HttpServletResponse</code>.</p>
+                                <p>Prevent downstream <code>Filter</code>s or the <code>Servlet</code> from being invoked. In this instance the <code>Filter</code> will typically write the <code>HttpServletResponse</code>.</br>
+                                    防止调用下游过滤器或Servlet。在这个实例中，过滤器通常会编写HttpServletResponse。
+                                </p>
                             </li>
                             <li>
-                                <p>Modify the <code>HttpServletRequest</code> or <code>HttpServletResponse</code> used by the downstream <code>Filter</code>s and <code>Servlet</code></p>
+                                <p>Modify the <code>HttpServletRequest</code> or <code>HttpServletResponse</code> used by the downstream <code>Filter</code>s and <code>Servlet</code></br>
+                                    修改下游过滤器和Servlet使用的HttpServletRequest或HttpServletResponse
+                                </p>
                             </li>
                         </ul>
                     </div>
                     <div class="paragraph">
-                        <p>The power of the <code>Filter</code> comes from the <code>FilterChain</code> that is passed into it.</p>
+                        <p>The power of the <code>Filter</code> comes from the <code>FilterChain</code> that is passed into it.</br>
+                            Filter的强大功能来自传递给它的FilterChain。
+                        </p>
                     </div>
                     <div class="exampleblock">
                         <div class="title">Example 51. <code>FilterChain</code> Usage Example</div>
@@ -3987,18 +4074,27 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                         </div>
                     </div>
                     <div class="paragraph">
-                        <p>Since a <code>Filter</code> only impacts downstream <code>Filter</code>s and the <code>Servlet</code>, the order each <code>Filter</code> is invoked is extremely important.</p>
+                        <p>Since a <code>Filter</code> only impacts downstream <code>Filter</code>s and the <code>Servlet</code>, the order each <code>Filter</code> is invoked is extremely important.</br>
+                            因为Filter只影响下游的Filters和Servlet，所以调用每个Filter的顺序非常重要。
+                        </p>
                     </div>
                 </div>
                 <div class="sect2">
                     <h3 id="servlet-delegatingfilterproxy"><a class="anchor" href="#servlet-delegatingfilterproxy"></a>9.2. DelegatingFilterProxy</h3>
+                    <span>9.2. 委托Filter代理</span>
                     <div class="paragraph">
                         <p>Spring provides a <code>Filter</code> implementation named <a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/web/filter/DelegatingFilterProxy.html/"><code>DelegatingFilterProxy</code></a>                            that allows bridging between the Servlet container&#8217;s lifecycle and Spring&#8217;s <code>ApplicationContext</code>. The Servlet container allows registering <code>Filter</code>s using its own standards, but it is not aware
                             of Spring defined Beans.
-                            <code>DelegatingFilterProxy</code> can be registered via standard Servlet container mechanisms, but delegate all the work to a Spring Bean that implements <code>Filter</code>.</p>
+                            <code>DelegatingFilterProxy</code> can be registered via standard Servlet container mechanisms, but delegate all the work to a Spring Bean that implements <code>Filter</code>.</br>
+                            Spring提供了一个名为DelegatingFilterProxy的过滤器实现，它允许在Servlet容器的生命周期和Spring的ApplicationContext之间进行桥接。
+                            Servlet容器允许使用它自己的标准注册过滤器，但是它不知道Spring定义的bean。
+                            DelegatingFilterProxy可以通过标准的Servlet容器机制注册，但是可以将所有的工作委托给实现Filter的Spring Bean。
+                        </p>
                     </div>
                     <div class="paragraph">
-                        <p>Here is a picture of how <code>DelegatingFilterProxy</code> fits into the <a href="#servlet-filters-review"><code>Filter</code>s and the <code>FilterChain</code></a>.</p>
+                        <p>Here is a picture of how <code>DelegatingFilterProxy</code> fits into the <a href="#servlet-filters-review"><code>Filter</code>s and the <code>FilterChain</code></a>.</br>
+                            下面是DelegatingFilterProxy如何适应过滤器和FilterChain的图片。
+                        </p>
                     </div>
                     <div id="servlet-delegatingfilterproxy-figure" class="imageblock">
                         <div class="content">
@@ -4008,7 +4104,9 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                     </div>
                     <div class="paragraph">
                         <p><code>DelegatingFilterProxy</code> looks up <em>Bean Filter<sub>0</sub></em> from the <code>ApplicationContext</code> and then invokes <em>Bean Filter<sub>0</sub></em>. The pseudo code of <code>DelegatingFilterProxy</code> can
-                            be seen below.</p>
+                            be seen below.</br>
+                            DelegatingFilterProxy从ApplicationContext查找Bean Filter0，然后调用Bean Filter0。DelegatingFilterProxy的伪代码如下所示。
+                        </p>
                     </div>
                     <div class="exampleblock">
                         <div class="title">Example 52. <code>DelegatingFilterProxy</code> Pseudo Code</div>
@@ -4041,7 +4139,10 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                     </div>
                     <div class="paragraph">
                         <p>Another benefit of <code>DelegatingFilterProxy</code> is that it allows delaying looking <code>Filter</code> bean instances. This is important because the container needs to register the <code>Filter</code> instances before the
-                            container can startup. However, Spring typically uses a <code>ContextLoaderListener</code> to load the Spring Beans which will not be done until after the <code>Filter</code> instances need to be registered.</p>
+                            container can startup. However, Spring typically uses a <code>ContextLoaderListener</code> to load the Spring Beans which will not be done until after the <code>Filter</code> instances need to be registered.</br>
+                            DelegatingFilterProxy的另一个好处是它允许延迟查看Filter bean实例。这很重要，因为容器在启动之前需要注册Filter实例。
+                            然而，Spring通常使用一个ContextLoaderListener来加载Spring bean，这在需要注册Filter实例之后才会完成。
+                        </p>
                     </div>
                 </div>
                 <div class="sect2">
@@ -4049,7 +4150,10 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                     <div class="paragraph">
                         <p>Spring Security&#8217;s Servlet support is contained within <code>FilterChainProxy</code>.
                             <code>FilterChainProxy</code> is a special <code>Filter</code> provided by Spring Security that allows delegating to many <code>Filter</code> instances through <a href="#servlet-securityfilterchain"><code>SecurityFilterChain</code></a>.
-                            Since <code>FilterChainProxy</code> is a Bean, it is typically wrapped in a <a href="#servlet-delegatingfilterproxy">DelegatingFilterProxy</a>.</p>
+                            Since <code>FilterChainProxy</code> is a Bean, it is typically wrapped in a <a href="#servlet-delegatingfilterproxy">DelegatingFilterProxy</a>.</br>
+                            Spring Security的Servlet支持包含在FilterChainProxy中。FilterChainProxy是Spring Security提供的一个特殊的过滤器，它允许通过SecurityFilterChain委托给许多Filter实例。
+                            由于FilterChainProxy是一个Bean，它通常被封装在DelegatingFilterProxy中。
+                        </p>
                     </div>
                     <div id="servlet-filterchainproxy-figure" class="imageblock">
                         <div class="content">
@@ -4061,7 +4165,9 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                 <div class="sect2">
                     <h3 id="servlet-securityfilterchain"><a class="anchor" href="#servlet-securityfilterchain"></a>9.4. SecurityFilterChain</h3>
                     <div class="paragraph">
-                        <p><a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/SecurityFilterChain.html"><code>SecurityFilterChain</code></a> is used by <a href="#servlet-filterchainproxy">FilterChainProxy</a>                            to determine which Spring Security <code>Filter</code>s should be invoked for this request.</p>
+                        <p><a href="https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/SecurityFilterChain.html"><code>SecurityFilterChain</code></a> is used by <a href="#servlet-filterchainproxy">FilterChainProxy</a>                            to determine which Spring Security <code>Filter</code>s should be invoked for this request.</br>
+                            SecurityFilterChain被FilterChainProxy用来确定应该为这个请求调用哪个Spring安全过滤器。
+                        </p>
                     </div>
                     <div id="servlet-securityfilterchain-figure" class="imageblock">
                         <div class="content">
@@ -4072,17 +4178,29 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                     <div class="paragraph">
                         <p>The <a href="#servlet-security-filters">Security Filters</a> in <code>SecurityFilterChain</code> are typically Beans, but they are registered with <code>FilterChainProxy</code> instead of <a href="#servlet-delegatingfilterproxy">DelegatingFilterProxy</a>.
                             <code>FilterChainProxy</code> provides a number of advantages to registering directly with the Servlet container or <a href="#servlet-delegatingfilterproxy">DelegatingFilterProxy</a>. First, it provides a starting point for
-                            all of Spring Security&#8217;s Servlet support. For that reason, if you are attempting to troubleshoot Spring Security&#8217;s Servlet support, adding a debug point in <code>FilterChainProxy</code> is a great place to start.</p>
+                            all of Spring Security&#8217;s Servlet support. For that reason, if you are attempting to troubleshoot Spring Security&#8217;s Servlet support, adding a debug point in <code>FilterChainProxy</code> is a great place to start.</br>
+                            SecurityFilterChain中的安全过滤器通常是bean，但是它们注册在FilterChainProxy而不是DelegatingFilterProxy上。
+                            FilterChainProxy为直接注册Servlet容器或DelegatingFilterProxy提供了许多优势。
+                            首先，它为所有Spring Security的Servlet支持提供了一个起点。
+                            因此，如果您试图排除Spring Security的Servlet支持，那么在FilterChainProxy中添加一个调试点是一个很好的开始。
+                        </p>
                     </div>
                     <div class="paragraph">
                         <p>Second, since <code>FilterChainProxy</code> is central to Spring Security usage it can perform tasks that are not viewed as optional. For example, it clears out the <code>SecurityContext</code> to avoid memory leaks. It also applies
-                            Spring Security&#8217;s <a href="#servlet-httpfirewall"><code>HttpFirewall</code></a> to protect applications against certain types of attacks.</p>
+                            Spring Security&#8217;s <a href="#servlet-httpfirewall"><code>HttpFirewall</code></a> to protect applications against certain types of attacks.</br>
+                            第二，由于FilterChainProxy是Spring安全使用的中心，它可以执行一些不是可选的任务。例如，它清除SecurityContext以避免内存泄漏。
+                            它还应用Spring Security的HttpFirewall来保护应用程序免受某些类型的攻击。
+                        </p>
                     </div>
                     <div class="paragraph">
-                        <p>In addition, it provides more flexibility in determining when a <code>SecurityFilterChain</code> should be invoked. In a Servlet container, <code>Filter</code>s are invoked based upon the URL alone. However, <code>FilterChainProxy</code>                            can determine invocation based upon anything in the <code>HttpServletRequest</code> by leveraging the <code>RequestMatcher</code> interface.</p>
+                        <p>In addition, it provides more flexibility in determining when a <code>SecurityFilterChain</code> should be invoked. In a Servlet container, <code>Filter</code>s are invoked based upon the URL alone. However, <code>FilterChainProxy</code>                            can determine invocation based upon anything in the <code>HttpServletRequest</code> by leveraging the <code>RequestMatcher</code> interface.</br>
+                            此外，它在确定何时应该调用SecurityFilterChain方面提供了更多的灵活性。在Servlet容器中，只根据URL调用过滤器。然而，FilterChainProxy可以通过利用RequestMatcher接口来根据HttpServletRequest中的任何内容来确定调用。
+                        </p>
                     </div>
                     <div class="paragraph">
-                        <p>In fact, <code>FilterChainProxy</code> can be used to determine which <code>SecurityFilterChain</code> should be used. This allows providing a totally separate configuration for different <em>slices</em> of your application.</p>
+                        <p>In fact, <code>FilterChainProxy</code> can be used to determine which <code>SecurityFilterChain</code> should be used. This allows providing a totally separate configuration for different <em>slices</em> of your application.</br>
+                            事实上，FilterChainProxy可以用来确定应该使用哪个SecurityFilterChain。这允许为应用程序的不同部分提供完全独立的配置。
+                        </p>
                     </div>
                     <div id="servlet-multi-securityfilterchain-figure" class="imageblock">
                         <div class="content">
@@ -4092,12 +4210,16 @@ Using generated security password: 8e557245-73e2-4286-969a-ff57fe326336
                     </div>
                     <div class="paragraph">
                         <p>In the <a href="#servlet-multi-securityfilterchain-figure">Multiple SecurityFilterChain</a> Figure <code>FilterChainProxy</code> decides which <code>SecurityFilterChain</code> should be used. Only the first <code>SecurityFilterChain</code>                            that matches will be invoked. If a URL of <code>/api/messages/</code> is requested, it will first match on <code>SecurityFilterChain<sub>0</sub></code>'s pattern of <code>/api/**</code>, so only <code>SecurityFilterChain<sub>0</sub></code>                            will be invoked even though it also matches on <code>SecurityFilterChain<sub>n</sub></code>. If a URL of <code>/messages/</code> is requested, it will not match on <code>SecurityFilterChain<sub>0</sub></code>'s pattern of <code>/api/**</code>,
-                            so <code>FilterChainProxy</code> will continue trying each <code>SecurityFilterChain</code>. Assuming that no other, <code>SecurityFilterChain</code> instances match <code>SecurityFilterChain<sub>n</sub></code> will be invoked.</p>
+                            so <code>FilterChainProxy</code> will continue trying each <code>SecurityFilterChain</code>. Assuming that no other, <code>SecurityFilterChain</code> instances match <code>SecurityFilterChain<sub>n</sub></code> will be invoked.</br>
+                            在Multiple SecurityFilterChain图中，FilterChainProxy决定应该使用哪个SecurityFilterChain。只有第一个匹配的SecurityFilterChain将被调用。如果请求一个/api/messages/的URL，它将首先匹配SecurityFilterChain0的/api/**模式，所以只有SecurityFilterChain0将被调用，即使它也匹配SecurityFilterChainn。如果请求的URL是/messages/，它将不匹配SecurityFilterChain0的/api/**模式，所以FilterChainProxy将继续尝试每个SecurityFilterChain。假设没有其他SecurityFilterChain实例匹配SecurityFilterChainn将被调用。
+                        </p>
                     </div>
                     <div class="paragraph">
                         <p>Notice that <code>SecurityFilterChain<sub>0</sub></code> has only three security <code>Filter</code>s instances configured. However, <code>SecurityFilterChain<sub>n</sub></code> has four security <code>Filter</code>s configured.
                             It is important to note that each <code>SecurityFilterChain</code> can be unique and configured in isolation. In fact, a <code>SecurityFilterChain</code> might have zero security <code>Filter</code>s if the application wants
-                            Spring Security to ignore certain requests.</p>
+                            Spring Security to ignore certain requests.</br>
+                            注意，SecurityFilterChain0只配置了三个安全过滤器实例。然而，SecurityFilterChainn配置了四个安全过滤器。需要注意的是，每个SecurityFilterChain都可以是唯一的，并且可以独立配置。事实上，如果应用程序希望Spring security忽略某些请求，那么SecurityFilterChain可能没有安全过滤器。
+                        </p>
                     </div>
                 </div>
                 <div class="sect2">
