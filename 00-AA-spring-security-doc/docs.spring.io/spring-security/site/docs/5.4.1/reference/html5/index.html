@@ -10,6 +10,7 @@
     <title>Spring Security Reference</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="./css/font-awesome.min.css"> -->
     <style>
         .hidden {
             display: none;
@@ -42,6 +43,7 @@
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+     <!-- <script src="./js/zepto.min.js"></script> -->
     <script type="text/javascript">
         function addBlockSwitches() {
             $('.primary').each(function() {
@@ -399,45 +401,56 @@
                     Spring Security is a framework that provides authentication, authorization,
                     and protection against common attacks.
                     With first class support for both imperative and reactive applications,
-                    it is the de-facto standard for securing Spring-based applications.</p>
-                    <p>
-                    Spring Security是一个提供身份验证、授权、防止常见的攻击。
-                    有了对命令式和响应式应用程序的一流支持，它是保护基于spring的应用程序的事实上的标准
+                    it is the de-facto standard for securing Spring-based applications.</br>
+                        Spring Security是一个提供身份验证、授权、防止常见的攻击。
+                        有了对命令式和响应式应用程序的一流支持，它是保护基于spring的应用程序的事实上的标准
                     </p>
-
                 </div>
             </div>
         </div>
         <h1 id="introduction" class="sect0"><a class="anchor" href="#introduction"></a>Introduction</h1>
         <div class="openblock partintro">
             <div class="content">
-                This section discusses the logistics of Spring Security.
+                This section discusses the logistics of Spring Security.</br>
+                本节讨论Spring安全性的逻辑。
             </div>
         </div>
         <div class="sect1">
             <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>1. Prerequisites</h2>
+            <span>1. 先决条件</span>
             <div class="sectionbody">
                 <div class="paragraph">
-                    <p>Spring Security requires a Java 8 or higher Runtime Environment.</p>
-                    <p>Spring Security 需要 Java 8 或更高版本的运行时环境.</p>
+                    <p>Spring Security requires a Java 8 or higher Runtime Environment.</br>
+                    Spring Security 需要 Java 8 或更高版本的运行时环境。
+                    </p>
                 </div>
                 <div class="paragraph">
                     <p>As Spring Security aims to operate in a self-contained manner, you do not need to place any special configuration files in your Java Runtime Environment. In particular, you need not configure a special Java Authentication and Authorization
-                        Service (JAAS) policy file or place Spring Security into common classpath locations.</p>
+                        Service (JAAS) policy file or place Spring Security into common classpath locations.</br>
+                        由于Spring Security旨在以自包含的方式操作，因此您不需要在Java运行时环境中放置任何特殊的配置文件。
+                        特别是，您不需要配置特殊的Java身份验证和授权服务(JAAS)策略文件或将Spring Security放置到公共类路径位置。
+                        </p>
                 </div>
                 <div class="paragraph">
-                    <p>Similarly, if you use an EJB Container or Servlet Container, you need not put any special configuration files anywhere nor include Spring Security in a server classloader. All the required files are contained within your application.</p>
+                    <p>Similarly, if you use an EJB Container or Servlet Container, you need not put any special configuration files anywhere nor include Spring Security in a server classloader. All the required files are contained within your application.</br>
+                        类似地，如果您使用EJB容器或Servlet容器，则不需要在任何地方放置任何特殊配置文件，也不需要在服务器类加载器中包含Spring Security。所有必需的文件都包含在应用程序中。
+                    </p>
                 </div>
                 <div class="paragraph">
-                    <p>This design offers maximum deployment time flexibility, as you can copy your target artifact (be it a JAR, WAR, or EAR) from one system to another and it immediately works.</p>
+                    <p>This design offers maximum deployment time flexibility, as you can copy your target artifact (be it a JAR, WAR, or EAR) from one system to another and it immediately works.</br>
+                        这种设计提供了最大的部署时间灵活性，因为您可以将目标工件(JAR、WAR或EAR)从一个系统复制到另一个系统，并且它可以立即工作。
+                    </p>
                 </div>
             </div>
         </div>
         <div class="sect1">
             <h2 id="community"><a class="anchor" href="#community"></a>2. Spring Security Community</h2>
+            <span>2. Spring安全社区</span>
             <div class="sectionbody">
                 <div class="paragraph">
-                    <p>Welcome to the Spring Security Community! This section discusses how you can make the most of our vast community.</p>
+                    <p>Welcome to the Spring Security Community! This section discusses how you can make the most of our vast community.</br>
+                    欢迎来到Spring安全社区!本节讨论如何充分利用我们庞大的社区。
+                    </p>
                 </div>
                 <div class="sect2">
                     <h3 id="community-help"><a class="anchor" href="#community-help"></a>2.1. Getting Help</h3>
@@ -1162,105 +1175,168 @@ dependencyManagement {
         </div>
         <div class="sect1">
             <h2 id="features"><a class="anchor" href="#features"></a>5. Features</h2>
+            <span>5. 特性</span>
             <div class="sectionbody">
                 <div class="paragraph">
                     <p>Spring Security provides comprehensive support for <a href="#authentication">authentication</a>, authorization, and protection against <a href="#exploits">common exploits</a>. It also provides integration with other libraries to simplify
-                        its usage.</p>
+                        its usage.</br>
+                        Spring Security提供了对身份验证、授权和防止常见攻击的全面支持。它还提供了与其他库的集成以简化其使用。
+                    </p>
                 </div>
                 <div class="sect2">
                     <h3 id="authentication"><a class="anchor" href="#authentication"></a>5.1. Authentication</h3>
+                    <span>5.1. 身份验证</span>
                     <div class="paragraph">
                         <p>Spring Security provides comprehensive support for <a href="https://en.wikipedia.org/wiki/Authentication">authentication</a>. Authentication is how we verify the identity of who is trying to access a particular resource. A common
-                            way to authenticate users is by requiring the user to enter a username and password. Once authentication is performed we know the identity and can perform authorization.</p>
+                            way to authenticate users is by requiring the user to enter a username and password. Once authentication is performed we know the identity and can perform authorization.</br>
+                            Spring Security提供了对身份验证的全面支持。身份验证是我们如何验证试图访问特定资源的人的身份。验证用户身份的一种常见方法是要求用户输入用户名和密码。
+                            一旦执行了身份验证，我们就知道身份并可以执行授权。
+                        </p>
                     </div>
                     <div class="sect3">
                         <h4 id="authentication-support"><a class="anchor" href="#authentication-support"></a>5.1.1. Authentication Support</h4>
+                        <span>5.1.1 认证的支持</sapn>
                         <div class="paragraph">
-                            <p>Spring Security provides built in support for authenticating users. Refer to the sections on authentication for <a href="#servlet-authentication">Servlet</a> and WebFlux for details on what is supported for each stack.</p>
+                            <p>Spring Security provides built in support for authenticating users. Refer to the sections on authentication for <a href="#servlet-authentication">Servlet</a> and WebFlux for details on what is supported for each stack.</br>
+                            Spring Security 提供了对用户身份验证的内置支持。有关每个堆栈支持的内容的详细信息，请参阅有关Servlet和 WebFlux身份验证的部分。
+                            </p>
                         </div>
                     </div>
                     <div class="sect3">
                         <h4 id="authentication-password-storage"><a class="anchor" href="#authentication-password-storage"></a>5.1.2. Password Storage</h4>
+                        <sapn>5.1.2. 密码存储</span>
                         <div class="paragraph">
                             <p>Spring Security&#8217;s <code>PasswordEncoder</code> interface is used to perform a one way transformation of a password to allow the password to be stored securely. Given <code>PasswordEncoder</code> is a one way transformation,
                                 it is not intended when the password transformation needs to be two way (i.e. storing credentials used to authenticate to a database). Typically <code>PasswordEncoder</code> is used for storing a password that needs to
-                                be compared to a user provided password at the time of authentication.</p>
+                                be compared to a user provided password at the time of authentication.</br>
+                                Spring Security的PasswordEncoder接口用于执行密码的单向转换，以允许安全地存储密码。
+                                既然PasswordEncoder是单向转换，那么当密码转换需要双向转换时(即存储用于向数据库进行身份验证的凭据)，就不打算使用它。
+                                通常，PasswordEncoder用于存储密码，在身份验证时需要与用户提供的密码进行比较。
+                            </p>
                         </div>
                         <div class="sect4">
                             <h5 id="authentication-password-storage-history"><a class="anchor" href="#authentication-password-storage-history"></a>Password Storage History</h5>
                             <div class="paragraph">
                                 <p>Throughout the years the standard mechanism for storing passwords has evolved. In the beginning passwords were stored in plain text. The passwords were assumed to be safe because the data store the passwords were saved
                                     in required credentials to access it. However, malicious users were able to find ways to get large "data dumps" of usernames and passwords using attacks like SQL Injection. As more and more user credentials became public
-                                    security experts realized we needed to do more to protect users' passwords.</p>
+                                    security experts realized we needed to do more to protect users' passwords.</br>
+                                    多年来，存储密码的标准机制不断发展。在开始时，密码以明文形式存储。密码被认为是安全的，因为数据存储的密码保存在访问它所需的凭据中。
+                                    然而，恶意用户可以通过SQL注入之类的攻击找到获取用户名和密码的大量“数据转储”的方法。
+                                    随着越来越多的用户凭据成为公共安全专家意识到我们需要做更多的工作来保护用户的密码。
+                                </p>
                             </div>
                             <div class="paragraph">
                                 <p>Developers were then encouraged to store passwords after running them through a one way hash such as SHA-256. When a user tried to authenticate, the hashed password would be compared to the hash of the password that they
                                     typed. This meant that the system only needed to store the one way hash of the password. If a breach occurred, then only the one way hashes of the passwords were exposed. Since the hashes were one way and it was computationally
                                     difficult to guess the passwords given the hash, it would not be worth the effort to figure out each password in the system. To defeat this new system malicious users decided to create lookup tables known as <a href="https://en.wikipedia.org/wiki/Rainbow_table">Rainbow Tables</a>.
-                                    Rather than doing the work of guessing each password every time, they computed the password once and stored it in a lookup table.</p>
+                                    Rather than doing the work of guessing each password every time, they computed the password once and stored it in a lookup table.</br>
+                                    然后鼓励开发人员在通过SHA-256这样的单向散列运行密码后存储密码。当用户尝试验证时，将把哈希的密码与他们输入的密码的哈希值进行比较。
+                                    这意味着系统只需要存储密码的单向散列。如果发生了漏洞，那么只有一种方式的密码散列被暴露。
+                                    由于哈希值是一种方式，并且在给定哈希值的情况下很难猜测密码，因此不值得在系统中努力找出每个密码。为了打败这个新系统，恶意用户决定创建一个名为Rainbow tables的查找表。
+                                    他们不需要每次都猜测每个密码，而是计算密码一次，并将其存储在一个查找表中。
+                                </p>
                             </div>
                             <div class="paragraph">
                                 <p>To mitigate the effectiveness of Rainbow Tables, developers were encouraged to use salted passwords. Instead of using just the password as input to the hash function, random bytes (known as salt) would be generated for
                                     every users' password. The salt and the user&#8217;s password would be ran through the hash function which produced a unique hash. The salt would be stored alongside the user&#8217;s password in clear text. Then when
                                     a user tried to authenticate, the hashed password would be compared to the hash of the stored salt and the password that they typed. The unique salt meant that Rainbow Tables were no longer effective because the hash
-                                    was different for every salt and password combination.</p>
+                                    was different for every salt and password combination.</br>
+                                    为了降低Rainbow Tables的有效性，开发人员被鼓励使用盐渍密码。将为每个用户的密码生成随机字节(称为salt)，而不是仅仅使用密码作为哈希函数的输入。
+                                    盐和用户的密码将通过哈希函数运行，产生一个唯一的哈希。盐将以明文形式与用户密码一起存储。
+                                    然后当用户尝试验证时，将把哈希密码与存储的盐的哈希值和用户输入的密码进行比较。
+                                    独特的盐意味着彩虹表不再有效，因为每个盐和密码组合的散列是不同的。
+                                </p>
                             </div>
                             <div class="paragraph">
                                 <p>In modern times we realize that cryptographic hashes (like SHA-256) are no longer secure. The reason is that with modern hardware we can perform billions of hash calculations a second. This means that we can crack each
-                                    password individually with ease.</p>
+                                    password individually with ease.</br>
+                                    在现代，我们意识到密码散列(如SHA-256)不再安全。原因是，在现代硬件中，我们每秒可以执行数十亿次哈希计算。这意味着我们可以轻松地破解每个密码。
+                                </p>
                             </div>
                             <div class="paragraph">
                                 <p>Developers are now encouraged to leverage adaptive one-way functions to store a password. Validation of passwords with adaptive one-way functions are intentionally resource (i.e. CPU, memory, etc) intensive. An adaptive
                                     one-way function allows configuring a "work factor" which can grow as hardware gets better. It is recommended that the "work factor" be tuned to take about 1 second to verify a password on your system. This trade off
                                     is to make it difficult for attackers to crack the password, but not so costly it puts excessive burden on your own system. Spring Security has attempted to provide a good starting point for the "work factor", but users
                                     are encouraged to customize the "work factor" for their own system since the performance will vary drastically from system to system. Examples of adaptive one-way functions that should be used include <a href="#authentication-password-storage-bcrypt">bcrypt</a>,
-                                    <a href="#authentication-password-storage-pbkdf2">PBKDF2</a>, <a href="#authentication-password-storage-scrypt">scrypt</a>, and <a href="#authentication-password-storage-argon2">argon2</a>.</p>
+                                    <a href="#authentication-password-storage-pbkdf2">PBKDF2</a>, <a href="#authentication-password-storage-scrypt">scrypt</a>, and <a href="#authentication-password-storage-argon2">argon2</a>.</br>
+                                    现在鼓励开发人员利用自适应单向函数来存储密码。使用自适应单向函数验证密码是有意占用资源(如CPU、内存等)的。
+                                    自适应单向功能允许配置“工作因素”，它可以随着硬件的改进而增长。建议将“工作因子”调优为花大约1秒的时间来验证系统上的密码。
+                                    这种权衡使攻击者很难破解密码，但不会给您自己的系统带来过多的负担。
+                                    Spring Security试图为“工作因素”提供一个良好的起点，但是用户被鼓励为他们自己的系统定制“工作因素”，因为不同系统的性能会有很大的不同。
+                                    应该使用的自适应单向函数示例包括bcrypt、PBKDF2、scrypt和argon2。
+                                </p>
                             </div>
                             <div class="paragraph">
                                 <p>Because adaptive one-way functions are intentionally resource intensive, validating a username and password for every request will degrade performance of an application significantly. There is nothing Spring Security (or
                                     any other library) can do to speed up the validation of the password since security is gained by making the validation resource intensive. Users are encouraged to exchange the long term credentials (i.e. username and
-                                    password) for a short term credential (i.e. session, OAuth Token, etc). The short term credential can be validated quickly without any loss in security.</p>
+                                    password) for a short term credential (i.e. session, OAuth Token, etc). The short term credential can be validated quickly without any loss in security.</br>
+                                    由于自适应单向函数有意占用大量资源，因此为每个请求验证用户名和密码将显著降低应用程序的性能。
+                                    Spring Security(或任何其他库)无法加速密码验证，因为安全性是通过使验证资源密集来获得的。
+                                    鼓励用户将长期凭据(即用户名和密码)交换为短期凭据(即会话、OAuth令牌等)。可以快速验证短期凭证，而不会造成任何安全损失。
+                                </p>
                             </div>
                         </div>
                         <div class="sect4">
                             <h5 id="authentication-password-storage-dpe"><a class="anchor" href="#authentication-password-storage-dpe"></a>DelegatingPasswordEncoder</h5>
                             <div class="paragraph">
-                                <p>Prior to Spring Security 5.0 the default <code>PasswordEncoder</code> was <code>NoOpPasswordEncoder</code> which required plain text passwords. Based upon the <a href="#authentication-password-storage-history">Password History</a>                                    section you might expect that the default <code>PasswordEncoder</code> is now something like <code>BCryptPasswordEncoder</code>. However, this ignores three real world problems:</p>
+                                <p>Prior to Spring Security 5.0 the default <code>PasswordEncoder</code> was <code>NoOpPasswordEncoder</code> which required plain text passwords. Based upon the <a href="#authentication-password-storage-history">Password History</a>                                    section you might expect that the default <code>PasswordEncoder</code> is now something like <code>BCryptPasswordEncoder</code>. However, this ignores three real world problems:</br>
+                                在Spring Security 5.0之前，默认的PasswordEncoder是NoOpPasswordEncoder，它需要纯文本密码。根据“密码历史记录”部分，您可能会期望默认的PasswordEncoder现在是类似于BCryptPasswordEncoder的东西。
+                                然而，这忽略了三个现实世界的问题:
+                                </p>
                             </div>
                             <div class="ulist">
                                 <ul>
                                     <li>
-                                        <p>There are many applications using old password encodings that cannot easily migrate</p>
+                                        <p>There are many applications using old password encodings that cannot easily migrate</br>
+                                            有许多使用旧密码编码的应用程序无法轻松迁移
+                                        </p>
                                     </li>
                                     <li>
-                                        <p>The best practice for password storage will change again.</p>
+                                        <p>The best practice for password storage will change again.</br>
+                                            密码存储的最佳实践将再次更改
+                                        </p>
                                     </li>
                                     <li>
-                                        <p>As a framework Spring Security cannot make breaking changes frequently</p>
+                                        <p>As a framework Spring Security cannot make breaking changes frequently</br>
+                                            作为一个框架，Spring Security不能经常进行破坏性的更改
+                                        </p>
                                     </li>
                                 </ul>
                             </div>
                             <div class="paragraph">
-                                <p>Instead Spring Security introduces <code>DelegatingPasswordEncoder</code> which solves all of the problems by:</p>
+                                <p>Instead Spring Security introduces <code>DelegatingPasswordEncoder</code> which solves all of the problems by:</br>
+                                    相反，Spring Security引入DelegatingPasswordEncoder，它通过以下方法解决所有问题:
+                                </p>
                             </div>
                             <div class="ulist">
                                 <ul>
                                     <li>
-                                        <p>Ensuring that passwords are encoded using the current password storage recommendations</p>
+                                        <p>Ensuring that passwords are encoded using the current password storage recommendations</br>
+                                            确保使用当前的密码存储建议对密码进行编码
+                                        </p>
                                     </li>
                                     <li>
-                                        <p>Allowing for validating passwords in modern and legacy formats</p>
+                                        <p>Allowing for validating passwords in modern and legacy formats</br>
+                                            允许验证现代和传统格式的密码
+                                        </p>
                                     </li>
                                     <li>
-                                        <p>Allowing for upgrading the encoding in the future</p>
+                                        <p>Allowing for upgrading the encoding in the future</br>
+                                            允许在将来升级编码
+                                        </p>
                                     </li>
                                 </ul>
                             </div>
                             <div class="paragraph">
-                                <p>You can easily construct an instance of <code>DelegatingPasswordEncoder</code> using <code>PasswordEncoderFactories</code>.</p>
+                                <p>You can easily construct an instance of <code>DelegatingPasswordEncoder</code> using <code>PasswordEncoderFactories</code>.</br>
+                                    你可以使用PasswordEncoderFactories轻松构造DelegatingPasswordEncoder的实例。
+                                </p>
                             </div>
                             <div class="exampleblock">
-                                <div class="title">Example 18. Create Default DelegatingPasswordEncoder</div>
+                                <div class="title">
+                                    Example 18. Create Default DelegatingPasswordEncoder</br>
+                                    Example 18. 创建默认DelegatingPasswordEncoder
+                                </div>
                                 <div class="content">
                                     <div class="listingblock primary">
                                         <div class="title">Java</div>
@@ -1278,7 +1354,9 @@ dependencyManagement {
                                 </div>
                             </div>
                             <div class="paragraph">
-                                <p>Alternatively, you may create your own custom instance. For example:</p>
+                                <p>Alternatively, you may create your own custom instance. For example:</br>
+                                    或者，您可以创建自己的自定义实例。例如:
+                                </p>
                             </div>
                             <div class="exampleblock">
                                 <div class="title">Example 19. Create Custom DelegatingPasswordEncoder</div>
@@ -1315,9 +1393,13 @@ val passwordEncoder: PasswordEncoder = DelegatingPasswordEncoder(idForEncode, en
                                 </div>
                             </div>
                             <div class="sect5">
-                                <h6 id="authentication-password-storage-dpe-format"><a class="anchor" href="#authentication-password-storage-dpe-format"></a>Password Storage Format</h6>
+                                <h6 id="authentication-password-storage-dpe-format"><a class="anchor" href="#authentication-password-storage-dpe-format"></a>Password Storage Format</br>
+                                密码存储格式
+                                </h6>
                                 <div class="paragraph">
-                                    <p>The general format for a password is:</p>
+                                    <p>The general format for a password is:</br>
+                                        密码的一般格式为:
+                                    </p>
                                 </div>
                                 <div class="exampleblock">
                                     <div class="title">Example 20. DelegatingPasswordEncoder Storage Format</div>
@@ -1332,10 +1414,16 @@ val passwordEncoder: PasswordEncoder = DelegatingPasswordEncoder(idForEncode, en
                                 <div class="paragraph">
                                     <p>Such that <code>id</code> is an identifier used to look up which <code>PasswordEncoder</code> should be used and <code>encodedPassword</code> is the original encoded password for the selected <code>PasswordEncoder</code>.
                                         The <code>id</code> must be at the beginning of the password, start with <code>{</code> and end with <code>}</code>. If the <code>id</code> cannot be found, the <code>id</code> will be null. For example, the following
-                                        might be a list of passwords encoded using different <code>id</code>. All of the original passwords are "password".</p>
+                                        might be a list of passwords encoded using different <code>id</code>. All of the original passwords are "password".</br>
+                                        这样，id是一个标识符，用于查找应该使用哪个PasswordEncoder，而encodedPassword是所选PasswordEncoder的原始编码密码。
+                                        id必须在密码的开头，以{开头，以}结尾。如果找不到id, id将为空。
+                                        例如，下面可能是使用不同id编码的密码列表。所有原始密码都是“password”。
+                                    </p>
                                 </div>
                                 <div class="exampleblock">
-                                    <div class="title">Example 21. DelegatingPasswordEncoder Encoded Passwords Example</div>
+                                    <div class="title">Example 21. DelegatingPasswordEncoder Encoded Passwords Example</br>
+                                        Example 21. DelegatingPasswordEncoder编码的密码示例
+                                    </div>
                                     <div class="content">
                                         <div class="listingblock">
                                             <div class="content">
@@ -1352,8 +1440,9 @@ val passwordEncoder: PasswordEncoder = DelegatingPasswordEncoder(idForEncode, en
                                     <table>
                                         <tr>
                                             <td><i class="conum" data-value="1"></i><b>1</b></td>
-                                            <td>The first password would have a <code>PasswordEncoder</code> id of <code>bcrypt</code> and encodedPassword of <code>$2a$10$dXJ3SW6G7P50lGmMkkmwe.20cQQubK3.HZWzG3YB1tlRy.fqvM/BG</code>. When matching it would
-                                                delegate to <code>BCryptPasswordEncoder</code></td>
+                                            <td> The first password would have a <code>PasswordEncoder</code> id of <code>bcrypt</code> and encodedPassword of <code>$2a$10$dXJ3SW6G7P50lGmMkkmwe.20cQQubK3.HZWzG3YB1tlRy.fqvM/BG</code>.When matching it would delegate to <code>BCryptPasswordEncoder</code></br>
+                                                第一个密码将有一个PasswordEncoder id的bcrypt和encodedPassword的$2a$10$dXJ3SW6G7P50lGmMkkmwe.20cQQubK3.HZWzG3YB1tlRy.fqvM/BG。当匹配时，它会委托给BCryptPasswordEncoder
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -1361,8 +1450,7 @@ val passwordEncoder: PasswordEncoder = DelegatingPasswordEncoder(idForEncode, en
                                         </tr>
                                         <tr>
                                             <td><i class="conum" data-value="3"></i><b>3</b></td>
-                                            <td>The third password would have a <code>PasswordEncoder</code> id of <code>pbkdf2</code> and encodedPassword of <code>5d923b44a6d129f3ddf3e3c8d29412723dcbde72445e8ef6bf3b508fbf17fa4ed4d6b99ca763d8dc</code>. When
-                                                matching it would delegate to <code>Pbkdf2PasswordEncoder</code></td>
+                                            <td>The third password would have a <code>PasswordEncoder</code> id of <code>pbkdf2</code> and encodedPassword of <code>5d923b44a6d129f3ddf3e3c8d29412723dcbde72445e8ef6bf3b508fbf17fa4ed4d6b99ca763d8dc</code>. When matching it would delegate to <code>Pbkdf2PasswordEncoder</code></td>
                                         </tr>
                                         <tr>
                                             <td><i class="conum" data-value="4"></i><b>4</b></td>
@@ -1370,8 +1458,7 @@ val passwordEncoder: PasswordEncoder = DelegatingPasswordEncoder(idForEncode, en
                                         </tr>
                                         <tr>
                                             <td><i class="conum" data-value="5"></i><b>5</b></td>
-                                            <td>The final password would have a <code>PasswordEncoder</code> id of <code>sha256</code> and encodedPassword of <code>97cde38028ad898ebc02e690819fa220e88c62e0699403e94fff291cfffaf8410849f27605abcbc0</code>. When
-                                                matching it would delegate to <code>StandardPasswordEncoder</code></td>
+                                            <td>The final password would have a <code>PasswordEncoder</code> id of <code>sha256</code> and encodedPassword of <code>97cde38028ad898ebc02e690819fa220e88c62e0699403e94fff291cfffaf8410849f27605abcbc0</code>. When matching it would delegate to <code>StandardPasswordEncoder</code></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -1384,7 +1471,9 @@ val passwordEncoder: PasswordEncoder = DelegatingPasswordEncoder(idForEncode, en
                                             <td class="content">
                                                 <div class="paragraph">
                                                     <p>Some users might be concerned that the storage format is provided for a potential hacker. This is not a concern because the storage of the password does not rely on the algorithm being a secret. Additionally,
-                                                        most formats are easy for an attacker to figure out without the prefix. For example, BCrypt passwords often start with <code>$2a$</code>.</p>
+                                                        most formats are easy for an attacker to figure out without the prefix. For example, BCrypt passwords often start with <code>$2a$</code>.</br>
+                                                        一些用户可能会担心存储格式是为潜在的黑客提供的。这并不值得关注，因为密码的存储并不依赖于算法的机密性。此外，没有前缀的大多数格式都很容易被攻击者发现。例如，BCrypt的密码通常以$2a$开头。
+                                                        </p>
                                                 </div>
                                             </td>
                                         </tr>
@@ -1392,10 +1481,12 @@ val passwordEncoder: PasswordEncoder = DelegatingPasswordEncoder(idForEncode, en
                                 </div>
                             </div>
                             <div class="sect5">
-                                <h6 id="authentication-password-storage-dpe-encoding"><a class="anchor" href="#authentication-password-storage-dpe-encoding"></a>Password Encoding</h6>
+                                <h6 id="authentication-password-storage-dpe-encoding"><a class="anchor" href="#authentication-password-storage-dpe-encoding"></a>Password Encoding(密码编码)</h6>
                                 <div class="paragraph">
                                     <p>The <code>idForEncode</code> passed into the constructor determines which <code>PasswordEncoder</code> will be used for encoding passwords. In the <code>DelegatingPasswordEncoder</code> we constructed above, that means
-                                        that the result of encoding <code>password</code> would be delegated to <code>BCryptPasswordEncoder</code> and be prefixed with <code>{bcrypt}</code>. The end result would look like:</p>
+                                        that the result of encoding <code>password</code> would be delegated to <code>BCryptPasswordEncoder</code> and be prefixed with <code>{bcrypt}</code>. The end result would look like:</br>
+                                        传递给构造函数的idForEncode确定将使用哪个PasswordEncoder来编码密码。在我们上面构造的DelegatingPasswordEncoder中，这意味着编码密码的结果将被委托给BCryptPasswordEncoder，并加上{bcrypt}前缀。最终结果如下所示:
+                                        </p>
                                 </div>
                                 <div class="exampleblock">
                                     <div class="title">Example 22. DelegatingPasswordEncoder Encode Example</div>
@@ -1409,21 +1500,30 @@ val passwordEncoder: PasswordEncoder = DelegatingPasswordEncoder(idForEncode, en
                                 </div>
                             </div>
                             <div class="sect5">
-                                <h6 id="authentication-password-storage-dpe-matching"><a class="anchor" href="#authentication-password-storage-dpe-matching"></a>Password Matching</h6>
+                                <h6 id="authentication-password-storage-dpe-matching"><a class="anchor" href="#authentication-password-storage-dpe-matching"></a>Password Matching(密码匹配)</h6>
                                 <div class="paragraph">
                                     <p>Matching is done based upon the <code>{id}</code> and the mapping of the <code>id</code> to the <code>PasswordEncoder</code> provided in the constructor. Our example in <a href="#authentication-password-storage-dpe-format">Password Storage Format</a>                                        provides a working example of how this is done. By default, the result of invoking <code>matches(CharSequence, String)</code> with a password and an <code>id</code> that is not mapped (including a null id) will
-                                        result in an <code>IllegalArgumentException</code>. This behavior can be customized using <code>DelegatingPasswordEncoder.setDefaultPasswordEncoderForMatches(PasswordEncoder)</code>.</p>
+                                        result in an <code>IllegalArgumentException</code>. This behavior can be customized using <code>DelegatingPasswordEncoder.setDefaultPasswordEncoderForMatches(PasswordEncoder)</code>.</br>
+                                        匹配是基于{id}和id到构造函数中提供的PasswordEncoder的映射来完成的。我们在“密码存储格式”中的示例提供了如何做到这一点的工作示例。默认情况下，调用匹配(CharSequence, String)和一个没有映射的id(包括一个空id)的结果将导致一个IllegalArgumentException。
+                                        这个行为可以使用DelegatingPasswordEncoder.setDefaultPasswordEncoderForMatches(PasswordEncoder)来定制。
+                                    </p>
                                 </div>
                                 <div class="paragraph">
                                     <p>By using the <code>id</code> we can match on any password encoding, but encode passwords using the most modern password encoding. This is important, because unlike encryption, password hashes are designed so that there
                                         is no simple way to recover the plaintext. Since there is no way to recover the plaintext, it makes it difficult to migrate the passwords. While it is simple for users to migrate <code>NoOpPasswordEncoder</code>,
-                                        we chose to include it by default to make it simple for the getting started experience.</p>
+                                        we chose to include it by default to make it simple for the getting started experience.</br>
+                                        通过使用id，我们可以匹配任何密码编码，但编码密码使用最现代的密码编码。这一点很重要，因为与加密不同，密码散列的设计使得没有简单的方法来恢复明文。
+                                        由于无法恢复明文，因此很难迁移密码。虽然对用户来说，迁移NoOpPasswordEncoder很简单，但我们选择默认包含它，以简化入门体验。
+                                    </p>
                                 </div>
                             </div>
                             <div class="sect5">
                                 <h6 id="authentication-password-storage-dep-getting-started"><a class="anchor" href="#authentication-password-storage-dep-getting-started"></a>Getting Started Experience</h6>
+                                <span>开始体验</span>
                                 <div class="paragraph">
-                                    <p>If you are putting together a demo or a sample, it is a bit cumbersome to take time to hash the passwords of your users. There are convenience mechanisms to make this easier, but this is still not intended for production.</p>
+                                    <p>If you are putting together a demo or a sample, it is a bit cumbersome to take time to hash the passwords of your users. There are convenience mechanisms to make this easier, but this is still not intended for production.</br>
+                                        如果您正在构建一个演示或示例，那么花时间对用户的密码进行散列是有点麻烦的。有一些方便的机制可以简化这一点，但这仍然不是用于生产的。
+                                    </p>
                                 </div>
                                 <div class="exampleblock">
                                     <div class="title">Example 23. withDefaultPasswordEncoder Example</div>
@@ -1455,7 +1555,9 @@ println(user.password)
                                     </div>
                                 </div>
                                 <div class="paragraph">
-                                    <p>If you are creating multiple users, you can also reuse the builder.</p>
+                                    <p>If you are creating multiple users, you can also reuse the builder.</br>
+                                        如果您正在创建多个用户，您还可以重用builder。
+                                    </p>
                                 </div>
                                 <div class="exampleblock">
                                     <div class="title">Example 24. withDefaultPasswordEncoder Reusing the Builder</div>
@@ -1496,16 +1598,24 @@ val admin = users
                                 </div>
                                 <div class="paragraph">
                                     <p>This does hash the password that is stored, but the passwords are still exposed in memory and in the compiled source code. Therefore, it is still not considered secure for a production environment. For production, you
-                                        should <a href="#authentication-password-storage-boot-cli">hash your passwords externally</a>.</p>
+                                        should <a href="#authentication-password-storage-boot-cli">hash your passwords externally</a>.</br>
+                                        这将对存储的密码进行散列，但密码仍然暴露在内存和编译后的源代码中。因此，对于生产环境来说，它仍然是不安全的。
+                                        对于生产环境，您应该从外部散列您的密码。
+                                    </p>
                                 </div>
                             </div>
                             <div class="sect5">
                                 <h6 id="authentication-password-storage-boot-cli"><a class="anchor" href="#authentication-password-storage-boot-cli"></a>Encode with Spring Boot CLI</h6>
+                                <span>用Spring Boot CLI编码</sapn>
                                 <div class="paragraph">
-                                    <p>The easiest way to properly encode your password is to use the <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html">Spring Boot CLI</a>.</p>
+                                    <p>The easiest way to properly encode your password is to use the <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-cli.html">Spring Boot CLI</a>.</br>
+                                        正确编码密码的最简单方法是使用Spring Boot CLI。
+                                    </p>
                                 </div>
                                 <div class="paragraph">
-                                    <p>For example, the following will encode the password of <code>password</code> for use with <a href="#authentication-password-storage-dpe">DelegatingPasswordEncoder</a>:</p>
+                                    <p>For example, the following will encode the password of <code>password</code> for use with <a href="#authentication-password-storage-dpe">DelegatingPasswordEncoder</a>:</br>
+                                        例如，下面的代码将使用DelegatingPasswordEncoder来编码password的密码:
+                                    </p>
                                 </div>
                                 <div class="exampleblock">
                                     <div class="title">Example 25. Spring Boot CLI encodepassword Example</div>
@@ -1521,8 +1631,11 @@ val admin = users
                             </div>
                             <div class="sect5">
                                 <h6 id="authentication-password-storage-dpe-troubleshoot"><a class="anchor" href="#authentication-password-storage-dpe-troubleshoot"></a>Troubleshooting</h6>
+                                <span>故障排除</span>
                                 <div class="paragraph">
-                                    <p>The following error occurs when one of the passwords that are stored has no id as described in <a href="#authentication-password-storage-dpe-format">Password Storage Format</a>.</p>
+                                    <p>The following error occurs when one of the passwords that are stored has no id as described in <a href="#authentication-password-storage-dpe-format">Password Storage Format</a>.</br>
+                                        当存储的其中一个密码没有“密码存储格式”中描述的id时，会发生以下错误。
+                                    </p>
                                 </div>
                                 <div class="listingblock">
                                     <div class="content">
@@ -1533,14 +1646,20 @@ val admin = users
                                 </div>
                                 <div class="paragraph">
                                     <p>The easiest way to resolve the error is to switch to explicitly provide the <code>PasswordEncoder</code> that you passwords are encoded with. The easiest way to resolve it is to figure out how your passwords are currently
-                                        being stored and explicitly provide the correct <code>PasswordEncoder</code>.</p>
+                                        being stored and explicitly provide the correct <code>PasswordEncoder</code>.</br>
+                                        解决此错误的最简单方法是切换到显式提供用于编码密码的PasswordEncoder。最简单的解决方法是找出您的密码当前是如何存储的，并显式地提供正确的PasswordEncoder。
+                                    </p>
                                 </div>
                                 <div class="paragraph">
-                                    <p>If you are migrating from Spring Security 4.2.x you can revert to the previous behavior by <a href="#authentication-password-storage-configuration">exposing a <code>NoOpPasswordEncoder</code> bean</a>.</p>
+                                    <p>If you are migrating from Spring Security 4.2.x you can revert to the previous behavior by <a href="#authentication-password-storage-configuration">exposing a <code>NoOpPasswordEncoder</code> bean</a>.</br>
+                                        如果您是从Spring Security 4.2迁移的。x，你可以通过公开NoOpPasswordEncoder bean恢复到以前的行为。
+                                    </p>
                                 </div>
                                 <div class="paragraph">
                                     <p>Alternatively, you can prefix all of your passwords with the correct id and continue to use <code>DelegatingPasswordEncoder</code>. For example, if you are using BCrypt, you would migrate your password from something
-                                        like:</p>
+                                        like:<br>
+                                        或者，你可以用正确的id作为所有密码的前缀，并继续使用 DelegatingPasswordEncoder。例如，如果你正在使用BCrypt，你将从以下地方迁移你的密码:
+                                    </p>
                                 </div>
                                 <div class="listingblock">
                                     <div class="content">
@@ -1557,7 +1676,9 @@ val admin = users
                                 </div>
                                 <div class="paragraph">
                                     <p>For a complete listing of the mappings refer to the Javadoc on
-                                        <a href="https://docs.spring.io/spring-security/site/docs/5.0.x/api/org/springframework/security/crypto/factory/PasswordEncoderFactories.html">PasswordEncoderFactories</a>.</p>
+                                        <a href="https://docs.spring.io/spring-security/site/docs/5.0.x/api/org/springframework/security/crypto/factory/PasswordEncoderFactories.html">PasswordEncoderFactories</a>.</br>
+                                        要获得映射的完整列表，请参考PasswordEncoderFactories上的Javadoc。
+                                    </p>
                                 </div>
                             </div>
                         </div>
