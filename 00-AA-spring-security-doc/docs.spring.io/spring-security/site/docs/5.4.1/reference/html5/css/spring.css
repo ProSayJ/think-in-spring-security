@@ -101,7 +101,9 @@ img {
 .left {
     float: left !important
 }
-
+.translate {
+    color: green;
+}
 .right {
     float: right !important
 }
